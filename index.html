@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body { font-family: sans-serif; }
+
+p.normal {
+  line-height: 1.8;
+  text-decoration: double;
+  font-weight: bold;
+  font-size: large;
+  margin-top: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  padding: 10px;
+}
+
+
+.scene {
+  width: 400px;
+  height: 260px; 
+  margin: 40px 0;
+  perspective: 600px ;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+}
+
+.card.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card__face {
+  position: absolute;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  color: white;
+  line-height: 260px;
+  backface-visibility: hidden;
+}
+
+.card__face--front {
+  background: #85C1E9;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.card__face--back {
+  background: #85C1E9;
+  line-height: 10px;
+  transform: rotateY(180deg);
+}
+
+.scene2 {
+  width: 400px;
+  height: 260px; 
+  margin: 40px 0;
+  perspective: 600px;
+}
+
+.card2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+}
+
+.card2.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card2__face {
+  position: absolute;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  color: white;
+  line-height: 260px;
+  backface-visibility: hidden;
+}
+
+.card2__face--front {
+  background:#52BE80;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.card2__face--back {
+  background:#52BE80;
+  
+  line-height: 10px;
+  transform: rotateY(180deg);
+}
+
+
+.scene3 {
+  width: 400px;
+  height: 260px; 
+  margin: 40px 0;
+  perspective: 600px;
+}
+
+.card3 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  text-align: center;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+}
+
+.card3.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card3__face {
+  position: absolute;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  color: white;
+  line-height: 260px;
+  backface-visibility: hidden;
+}
+
+.card3__face--front {
+  background: #f7dc6f;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.card3__face--back {
+  background: #f7dc6f;
+  line-height: 10px;
+  transform: rotateY(180deg);
+}
+
+.scene4 {
+  width: 400px;
+  height: 260px; 
+  margin: 40px 0;
+  perspective: 600px;
+}
+
+.card4 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  text-align: center;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+}
+
+.card4.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card4__face {
+  position: absolute;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  color: white;
+  line-height: 260px;
+  backface-visibility: hidden;
+}
+
+.card4__face--front {
+  background:#c39bd3;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.card4__face--back {
+  background:#c39bd3;
+  line-height: 10px;
+  transform: rotateY(180deg);
+}
+
+.scene5 {
+  width: 400px;
+  height: 260px; 
+  margin: 40px 0;
+  perspective: 600px;
+}
+
+.card5 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  text-align: center;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+}
+
+.card5.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card5__face {
+  position: absolute;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  color: white;
+  line-height: 260px;
+  backface-visibility: hidden;
+}
+
+.card5__face--front {
+  background: #5499c7;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.card5__face--back {
+  background:#5499c7;
+  line-height: 10px;
+  transform: rotateY(180deg);
+}
+
+
+.scene6 {
+  width: 400px;
+  height: 260px; 
+  margin: 40px 0;
+  perspective: 600px;
+}
+
+.card6 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  text-align: center;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+}
+
+.card6.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card6__face {
+  position: absolute;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  color: white;
+  line-height: 260px;
+  backface-visibility: hidden;
+}
+
+.card6__face--front {
+  background:#85929e;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.card6__face--back {
+  background:#85929e;
+  
+  line-height: 10px;
+  transform: rotateY(180deg);
+}
+
+
+</style>
+</head>
+<body>
+    <div class="grid-container">
+    <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front">1</div>
+          <div class="card__face card__face--back">
+            <p class="normal">Be an adult whole life or Be a kid whole life, which one would you choose ? </p> 
+          </div>
+        </div>
+      </div>
+
+      <div class="scene2 scene2--card">
+        <div class="card2">
+          <div class="card2__face card2__face--front">2</div>
+          <div class="card2__face card2__face--back">
+            <p class="normal">You are fan of Himesh Reshmaiya, you have to convince all of us to go to Himesh Reshmaiya concert</p> 
+          </div>
+        </div>
+      </div>
+      
+      <div class="scene scene3--card">
+        <div class="card3">
+          <div class="card3__face card3__face--front">3</div>
+          <div class="card3__face card3__face--back">
+            <p class="normal">Everything you’ve ever wanted is on the other side of fear.</p> 
+          </div>
+        </div>
+      </div>
+
+      <div class="scene4 scene4--card">
+        <div class="card4">
+          <div class="card4__face card4__face--front">4</div>
+          <div class="card4__face card4__face--back">
+            <p class="normal">What is the most irrational thing you have ever done?</p> 
+          </div>
+        </div>
+      </div>
+
+      <div class="scene5 scene5--card">
+        <div class="card5">
+          <div class="card5__face card5__face--front">5</div>
+          <div class="card5__face card5__face--back">
+            <p class="normal">
+                You are a time-traveller and you can go back in time and talk to yourself at the age of ten. What advice would
+	you give yourself?
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="scene6 scene6--card">
+        <div class="card6">
+          <div class="card6__face card6__face--front">6</div>
+          <div class="card6__face card6__face--back">
+            <p class="normal"> You are advisor to PM Modi, what suggestions would you give to him ?</p> 
+          </div>
+        </div>
+      </div>
+</div>
+
+</body>
+
+
+<script>
+ //border: 1px solid #CCC;
+ // transform-style: preserve-3d; in .card 
+ // transform-origin: center right; in card
+var card = document.querySelector('.card');
+card.addEventListener( 'click', function() {
+    console.log("1")
+  card.classList.toggle('is-flipped');
+});
+
+var card2 = document.querySelector('.card2');
+card2.addEventListener( 'click', function() {
+    console.log("2")
+  card2.classList.toggle('is-flipped');
+});
+
+
+var card3 = document.querySelector('.card3');
+card3.addEventListener( 'click', function() {
+    console.log("3")
+  card3.classList.toggle('is-flipped');
+});
+
+
+var card4 = document.querySelector('.card4');
+card4.addEventListener( 'click', function() {
+    console.log("4")
+  card4.classList.toggle('is-flipped');
+});
+
+
+var card5 = document.querySelector('.card5');
+card5.addEventListener( 'click', function() {
+    console.log("5")
+  card5.classList.toggle('is-flipped');
+});
+
+
+var card6 = document.querySelector('.card6');
+card6.addEventListener( 'click', function() {
+    console.log("6")
+  card6.classList.toggle('is-flipped');
+});
+
+</script>
+</html>
